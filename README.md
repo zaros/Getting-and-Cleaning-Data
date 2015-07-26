@@ -40,8 +40,7 @@ And that's it!
 
 Since you are probably reading this Readme file because you are peer-reviewing my code, I have made more descriptive comments than normal in the script. You can check the outputted the text file by reloading it in R in the following command:
 
-tidyDataCheck <- read.table("./output/tidyData.txt",header=TRUE)
-head(tidyDataCheck)
+tidyDataCheck <- read.table("./output/tidyData.txt",header=TRUE); head(tidyDataCheck)
 
 If you do run the script you'll find that there are console messages telling you what the script is doing. It clutters up the code a bit, but since there are some long waits involved in the script execution, I put them in just to track what's going on.
 
