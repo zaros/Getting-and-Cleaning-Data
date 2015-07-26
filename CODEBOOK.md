@@ -22,7 +22,7 @@ The script combines the following files from the source data set:
 
 Only the measurements on the mean and standard deviation for each measurement are extracted from the combined data set (corresponding to features with labelled "mean()" and "std()"). The values activities column from the source data set and also column names is then relabelled with more descriptive names.
 
-The resulting data set contains 180 rows and 68 columns. Each row corresponds to aggregated mean measurements indexed by subject-activity combination. There are altogether 30 subjects performing 6 activities each, and a total of 66 features are measured.
+The resulting data set contains 180 rows and 68 columns. Each row corresponds to **aggregated mean** of the measurements indexed by subject-activity combination. There are altogether 30 subjects performing 6 activities each, and a total of 66 features are measured.
 
 ### Index Columns
 - "Subject" : Identifying the subject of the experiment (in a range of 1-30)
@@ -53,12 +53,14 @@ Hence the column labels can be interpreted in equivalence as illustrated in the 
 - "TimeGravityAcc_Y_mean": Mean value of the time measurement of the gravity acceleration in the Y axis
 
 ### Note: Mapping to source data
-The chosen variable naming pattern described above varies only slightly to the original naming pattern, with the intention of making the names more descriptive yet remaining as compact as possible. 
+The chosen variable naming pattern described above varies only slightly to the original naming pattern, with the intention of making the names more descriptive yet remaining as compact as possible, and making it easy for the data user to refer to the source documentation for more detailed information by conserving most of the existing nomenclature.
 
 The equivalent columns in the original source data set which correspond to the examples above are: 
 - "FreqBodyGyro_Z_std" maps to "fBodyGyro-std()-Z"
 - "TimeBodyAcc_X_mean" maps to "tBodyAcc-mean()-X"
 - "TimeGravityAcc_Y_mean" maps to "tGravityAcc-mean()-Y"
+
+The user should consult the information from the source data set for additional information about these features.
 
 ### Note: Typos fixed
 The original data set contains a number of columns with repetitive "Body" labels e.g. "f**BodyBody**GyroMag". Instances of these are presumed as typo errors and renamed to have only one Body where found i.e. "f**BodyBody**GyroMag" is renamed to "FreqBodyGyroMag".
