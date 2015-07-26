@@ -68,15 +68,8 @@ combinedData <- rbind(testData,trainingData)
 # cleanup: remove temporary objects
 rm(trainingData,trainingSubjects,trainingActivities,testData,testSubjects,testActivities)
 
-print("Performing transformations")
-# make the Activity column in the dataset as Factors and give the factor levels descriptive names,
-# according to the list provided in activity_labels.txt
-activity_labels <- read.table(paste(dataDir,"activity_labels.txt",sep=""),header=FALSE)
-combinedData$Activity <- as.factor(combinedData$Activity)
-levels(combinedData$Activity)<-activity_labels[,"V2"]
-
+print("Extracting mean and standard deviation columns only")
 # Extract only the measurements on the mean and standard deviation for each measurement:
-
 # - get the list of the columns using regex() function
 # - we'll need to substitute some characters to match the column names in the data frame
 cols <- grep("(-mean|-std)\\(\\)",features,value=TRUE)
@@ -88,6 +81,13 @@ cols <- c(c("Subject","Activity"),cols)
 
 # - now just select the wanted columns
 combinedData <- combinedData[,cols]
+
+print("Performing transformations")
+# make the Activity column in the dataset as Factors and give the factor levels descriptive names,
+# according to the list provided in activity_labels.txt
+activity_labels <- read.table(paste(dataDir,"activity_labels.txt",sep=""),header=FALSE)
+combinedData$Activity <- as.factor(combinedData$Activity)
+levels(combinedData$Activity)<-activity_labels[,"V2"]
 
 # Rename column names of the dataset:
 # - converting periods to underscores
