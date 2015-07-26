@@ -1,0 +1,5 @@
+*.Rproj
+.RData
+.RHistory
+UCI HAR Dataset/
+output/
