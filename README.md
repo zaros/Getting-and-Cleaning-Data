@@ -32,9 +32,8 @@ Ensure that the following R libraries are installed on your system:
 2. Run the run_analysis.R
 3. The script will automatically set the working directory to the script's directory and download the source data into a directory "UCI HAR Dataset". If the directory (and I assume the data) already exists, no files will be downloaded.
 4. Two data sets will be generated: 
-- combinedData: result of steps 1-4 
-- tidyData: result of step 5, as a wide dataset
-
+    - combinedData: result of steps 1-4 
+    - tidyData: result of step 5, as a wide dataset
 5. The script will create another directory "output" in the working directory and output the tidyData dataset a text file tidyData.txt  
 
 And that's it!
